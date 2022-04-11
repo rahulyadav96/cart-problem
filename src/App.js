@@ -1,8 +1,20 @@
+import { Switch, Route } from "react-router-dom";
+import { Home } from "./components/Home";
+import { MyCart } from "./components/MyCart";
+import { Navbar } from "./components/Navbar";
 
 function App() {
   return (
     <div className="App">
-     <h1>Hello</h1>
+      <Navbar />
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route to="/mycart">
+            <MyCart />
+        </Route>
+      </Switch>
     </div>
   );
 }
